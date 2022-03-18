@@ -23,7 +23,7 @@ function countAndFilter(word) {
         }
     })
 
-    console.log(`The word ${word} has ${countVowels} vowels (${arrayVowels}), and ${countConsonants} consonants (${arrayConsonants})`)
+    console.log(`The word ${word} has length ${word.split(" ").join("").length}, ${countVowels} vowels (${arrayVowels}), and ${countConsonants} consonants (${arrayConsonants})`)
 }
 
 countAndFilter("IRIDiUM")
