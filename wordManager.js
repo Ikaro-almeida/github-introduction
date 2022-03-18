@@ -1,19 +1,31 @@
 let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
 
-function countAndFilterVowels(word) {
+function countAndFilter(word) {
 
     arrayWord = word.split("")
 
     let arrayVowels = []
     let countVowels = 0
+
+    let arrayConsonants = []
+    let countConsonants = 0
+
     arrayWord.forEach(e => {
-        if (vowels.includes(e) && !arrayVowels.includes(e)) {
-            arrayVowels.push(e)
-            countVowels++
+        if (e != " ") {
+            if (vowels.includes(e) && !arrayVowels.includes(e.toLowerCase()) && !arrayVowels.includes(e.toUpperCase())) {
+                arrayVowels.push(e)
+                countVowels++
+            }
+            else if (!vowels.includes(e) && !arrayConsonants.includes(e.toLowerCase()) && !arrayConsonants.includes(e.toUpperCase())){
+                arrayConsonants.push(e)
+                countConsonants++
+            }
         }
     })
 
-    console.log(`The word ${word} has ${countVowels} vowels: ${arrayVowels}`)
+    console.log(`The word ${word} has ${countVowels} vowels (${arrayVowels}), and ${countConsonants} consonants (${arrayConsonants})`)
 }
 
-countAndFilterVowels("IRIDIUM")
+countAndFilter("IRIDiUM")
+console.log()
+countAndFilter("Pi System")
